@@ -24,19 +24,19 @@
           :sku="sku"
           :allVariants="allVariants"
         />
-        <!-- @todo: calculate in stock -->
-        <!-- <div v-if="availableQ">
+        <div v-if="availableQuantity > 0">
           {{ t('available') }}: {{ availableQuantity }}
-        </div> -->
+        </div>
         <AddToCartForm
           :sku="sku"
           :isOnStock="true"
-          :availableQuantity="10"
+          :availableQuantity="availableQuantity"
         />
         <a href @click.prevent="openAddToShoppingList">
           <i class="dl-icon-heart"></i
           ><span>Shopping list</span>
         </a>
+        <div>{{deliveryTime}}</div>
 
         <DetailsSection :currentVariant="currentVariant" />
       </div>

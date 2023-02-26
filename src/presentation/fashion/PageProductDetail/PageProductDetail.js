@@ -1,5 +1,5 @@
 //@todo: add to shopping list (breadcrumb can go)
-// import AddToShoppingList from '../../productoverview/AddToShoppingList/AddToShoppingList.vue';
+import AddToShoppingList from '../ProductOverview/AddToShoppingList/AddToShoppingList.vue';
 import { ref } from 'vue';
 import useProductTools from 'hooks/useProductTools';
 import ProductInfo from './ProductInfo/ProductInfo.vue';
@@ -7,8 +7,7 @@ import ProductInfo from './ProductInfo/ProductInfo.vue';
 export default {
   name: 'PageProductDetail',
   setup() {
-    const { allVariants, currentVariant, sku, error } =
-      useProductTools(true);
+    const { allVariants, currentVariant, sku, error } = useProductTools(true);
     const showAddToShoppingList = ref(false);
     const productSku = ref(null);
     const openAddToShoppingList = () => {
@@ -25,11 +24,12 @@ export default {
       currentVariant,
       error,
       sku,
+      showAddToShoppingList,
     };
   },
   components: {
     // Breadcrumb,
     ProductInfo,
-    // AddToShoppingList
+    AddToShoppingList
   },
 };

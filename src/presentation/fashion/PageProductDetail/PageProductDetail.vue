@@ -11,18 +11,17 @@
     v-if="currentVariant"
   >
     <div class="custom-container">
-      <!-- @todo: add to shopping list
-      @open-add-shopping-list="openAddToShoppingList" -->
       <ProductInfo
         :sku="sku"
         :currentVariant="currentVariant"
         :allVariants="allVariants"
+        @open-add-shopping-list="openAddToShoppingList"
       />
     </div>
-    <!-- <AddToShoppingList
+    <AddToShoppingList
       :showModal="showAddToShoppingList"
       :productSku="sku"
       @close-modal="closeAddToShoppingList"
-    /> -->
+    />
   </div>
 </template>
